@@ -1,0 +1,84 @@
+import javax.swing.JOptionPane;
+/**
+ *
+ * @author User
+ */
+public class Belajar3 {
+
+    public static void main(String[] args) {
+String input = JOptionPane.showInputDialog(null, "Input NIS");
+String nis = input;
+input = JOptionPane.showInputDialog(null, "Input Nama");
+String nama = input;
+input = JOptionPane.showInputDialog(null, "Input Mapel");
+String mapel = input;
+input = JOptionPane.showInputDialog(null, "Input Kelas");
+int kelas = Integer.parseInt(input);
+input = JOptionPane.showInputDialog(null, "Input Jurusan");
+String jurusan = input;
+input = JOptionPane.showInputDialog(null, "Input Nilai");
+double nilai = Double.parseDouble(input);
+input = JOptionPane.showInputDialog(null, "Status Aktif [true/false]");
+boolean status = Boolean.parseBoolean(input);
+System.out.println("NIS : "+ nis);
+System.out.println("Nama : "+ nama);
+System.out.println("Mapel : "+ mapel);
+System.out.println("Kelas : "+ kelas);
+System.out.println("Jurusan : "+ jurusan);
+System.out.println("Nilai : "+ nilai);
+System.out.println("Status aktif : "+ status);
+    }
+}
+
+package com.mycompany.matriks;
+import javax.swing.JOptionPane;
+/**
+ *
+ * @author User
+ */
+public class Matriks {
+
+    public static void main(String[] args) {
+        int matriks1[][] = new int[2][2];
+        int matriks2[][] = new int[2][2];
+
+        boolean benar = true;
+        while (benar) {
+            int pilih = Integer.parseInt(JOptionPane.showInputDialog("Kalkulator Matrik" + "\n"
+                    + "1. Input Matrik 1" + "\n"
+                    + "2. Input Matrik 2" + "\n"
+                    + "3. Jumlahkan" + "\n"
+                    + "4. Kurangkan" + "\n"
+                    + "5. Kalikan " + "\n"
+                    + "6. Keluar"));
+         
+            if (pilih == 1) {
+                for (int baris = 0; baris < matriks1.length; baris++) {
+                    for (int kolom = 0; kolom < matriks1[0].length; kolom++) {
+                        matriks1[baris][kolom] = Integer.parseInt(JOptionPane.showInputDialog("Input Matriks Baris ke " + baris
+                                + " Kolom ke " + kolom));
+                    }
+                }
+                JOptionPane.showMessageDialog(null, matriks1[0][0] + " " + matriks1[0][1] + "\n"
+                        + matriks1[1][0] + " " + matriks1[1][1]);
+                
+            } else if (pilih == 2) {
+                for (int baris = 0; baris < matriks2.length; baris++) {
+                    for (int kolom = 0; kolom < matriks2[0].length; kolom++) {
+                        matriks2[baris][kolom] = Integer.parseInt(JOptionPane.showInputDialog("Input Matriks Baris ke " + baris
+                                + " Kolom ke " + kolom));
+                    }
+                }
+                JOptionPane.showMessageDialog(null, matriks2[0][0] + " " + matriks2[0][1] + "\n"
+                        + matriks2[1][0] + " " + matriks2[1][1]);
+                
+            } else if (pilih == 6) {
+                benar = false;
+            }
+        }
+
+    }
+
+}
+
+    
