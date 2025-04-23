@@ -1,0 +1,92 @@
+import java.util.*; 
+/**
+ *
+ * @author User
+ */
+public class Nilai1 {
+// Recursively computes average of a[]
+    static double findTotal(int a[], int i, int n)
+    {
+        // Last element
+        if (i == n-1)
+            return a[i];    
+        // When index is 0, divide sum computed so
+        // far by n.
+        if (i == 0)
+            return ((a[i] + findTotal(a, i+1, n))/n);    
+        // Compute sum
+        return (a[i] + findTotal(a, i+1, n));
+    }    
+    // Function that returns the average of an array.
+    static double findPercentage(int a[], int n)
+    {
+         return findTotal(a, 0, n);
+    }    
+    // Main driver method 
+    public static void main(String[] args) {
+       // Taking input from user 
+        Scanner sc = new Scanner(System.in); 
+        int n;     //Declaring Variables
+        
+        //Ask the user to enter the Array Size
+        System.out.println("Masukkan jumlah mata pelajaran : ");
+        n=sc.nextInt();
+        
+        //Declare the array
+        int arr[] = new int[n]; 
+        System.out.println("Masukkan nilai yang diperoleh pada setiap mata pelajaran : ");
+        for(int i=0;i<n;i++)   //Initialize the array
+        {
+            arr[i]=sc.nextInt();
+        }        
+        //Print the sum and percentage
+         double avg=findPercentage(arr, n);  
+         double sum=avg*n;
+        System.out.println("Jumlah nilai : "+sum);
+        System.out.println("Total persen : " +avg+" % ");   
+    }
+}
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+public class Tuas {
+
+    public static void main(String[] args) {
+BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
+int data =0;
+String[] nama    = new String[30];
+String[] nis     = new String[15];
+String[] jurusan = new String[10];
+String[] alamat  = new String[50];
+System.out.println("BIODATA MAHASISWA");
+System.out.println("+===============Data============================+");
+try{
+System.out.println("Masukkan banyak data = ");
+data = Integer.parseInt(input.readLine());
+for (int a=1;a<=data;a++){
+System.out.println("------Data ke-"+ a +"------");
+System.out.println("Masukan Nis= ");
+nis[a] = input.readLine();
+System.out.println("Masukan Nama= ");
+nama[a] = input.readLine();
+System.out.println("Masukan Jurusan= ");
+jurusan[a] = input.readLine();
+System.out.println("Masukan Alamat = ");
+alamat[a] = input.readLine();
+     }
+    } catch (IOException e ){
+  System.out.println("Error");
+}
+ 
+System.out.println("+==============HASIL Data ========================+");
+System.out.println("Banyak data : " + data);
+for (int a=1; a<=data;a++){
+    System.out.println("Data Mahasiswa ke- " + a);
+    System.out.println("Nis     : "+ nis[a]);
+    System.out.println("Nama    : "+ nama[a]);
+    System.out.println("Alamat  : "+ alamat[a]);
+    System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+    }
+}
+}
