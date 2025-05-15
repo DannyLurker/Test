@@ -1,0 +1,38 @@
+public class Nilai {
+
+    private static String nilaitugas;
+    private static String Kuis;
+
+    public static void main(String[] args) {
+       //deklarasi dan inisialisasi variabel
+double k = 0,t = 0,uts = 0,uas = 0,q = 0, to = 0,a = 0,b = 0,c = 0,d = 0;
+//proses input dan konversi ke double
+String nama = "" ;
+String nis = "" ;
+System.out.println("input nilai siswa");
+nama = JOptionPane.showInputDialog(" Masukkan nama siswa : ");
+nis = JOptionPane.showInputDialog(" Masukkan NIS : ");
+uts = Double.parseDouble(JOptionPane.showInputDialog("Inputkan nilai UTS : "));
+uas = Double.parseDouble(JOptionPane.showInputDialog("Inputkan nilai UAS :"));
+t = Double.parseDouble(JOptionPane.showInputDialog("Inputkan nilai tugas : "));
+q = Double.parseDouble(JOptionPane.showInputDialog("Inputkan nilai Kuis : "));
+
+
+//proses perhitungan
+a = uts*30/100;
+b = uas*35/100;
+c = t*15/100;
+d = q*20/100;
+to = a+b+c+d;
+//output
+System.out.println("Nama : "+ nama);
+System.out.println("NIS : "+ nis);
+System.out.println("nilai UTS : "+ uts);
+System.out.println("nilai UAS : "+ uas);
+System.out.println("nilai tugas : "+ t);
+System.out.println("Nilai Kuis : "+ q);
+
+
+
+    }
+}
