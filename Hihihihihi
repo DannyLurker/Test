@@ -1,0 +1,61 @@
+public class Uji {
+
+    public static void main(String[] args)throws Exception  {
+        SwingUtilities.invokeLater( new Runnable() {
+            public void run() {
+                Object[] Mapel = {
+                    "Dasar keahlian",
+                    "Informatika",
+                    "Bahasa indonesia",
+                    "Bahasa inggris",
+                    "Penjas",
+                    "Seni",
+                    "IPAS",
+                    "Mata Pelajaran" 
+                };
+                JComboBox optionList = new JComboBox(Mapel);
+                optionList.setSelectedIndex(7);
+                JOptionPane.showMessageDialog(null, optionList, "Title",
+                     JOptionPane.QUESTION_MESSAGE);
+            }
+        });
+    }
+}
+
+public class Lulus {
+
+    public static void main(String[] args) {
+        
+        String nama;
+        String alamat;
+        String jurusan;
+        int kelas;
+        int nohp;
+        int nilai;
+        
+        
+        Scanner scan = new Scanner(System.in);
+
+        // mengambil input
+        System.out.print("Nama: ");
+        nama = scan.nextLine();
+        System.out.print("kelas: ");
+        kelas = scan.nextInt();
+        System.out.print("jurusan: ");
+        jurusan = scan.next();
+        System.out.print("alamat: ");
+        alamat = scan.next();
+        System.out.print("nohp: ");
+        nohp = scan.nextInt();
+        System.out.print("Nilai: ");
+        nilai = scan.nextInt();
+        
+
+        // cek apakah dia lulus atau tidak
+        if( nilai >= 70 ) {
+            System.out.println("Selemat " + nama +  ", anda lulus!");
+        } else {
+            System.out.println("Maaf " + nama +  ", anda gagal");
+        }
+    }
+}
