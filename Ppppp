@@ -74,3 +74,48 @@ public class Hitung {
              JOptionPane.showMessageDialog(null, hasil);
     }
 }
+
+public class Hitung3 {
+
+    public static void main(String[] args) {
+        int gapok=0,tunjangan=0,total_gaji;
+String nama=JOptionPane.showInputDialog("Masukkan nama");
+String NIK=JOptionPane.showInputDialog("Masukkan NIK");
+String golongan=JOptionPane.showInputDialog("Masukkan Golongan (1/2/3)");
+int a=Integer.parseInt(golongan);
+String jumlah_anak=JOptionPane.showInputDialog("Masukkan Jumlah Anak");
+int b=Integer.parseInt(jumlah_anak);
+
+if(a==1)
+{gapok=1000000;
+    if(b<3)
+    {tunjangan=200000;}
+    else
+    {tunjangan=0;}
+}
+else if(a==2)
+{gapok=1500000;
+if(b<3)
+    {tunjangan=150000;}
+    else
+    {tunjangan=0;}
+}
+else if(a==3)
+{gapok=2000000;
+if(b<3)
+    {tunjangan=100000;}
+    else
+    {tunjangan=0;}
+}
+total_gaji=tunjangan+gapok;
+
+System.out.println("Nama Karyawan : " + nama);
+System.out.println("NIK : " + NIK);
+System.out.println(" Golongan: " + a);
+System.out.println("Jumlah Anak : " +b);
+System.out.println("Gaji pokok : " + gapok);
+System.out.println("Tunjangan : " + tunjangan);
+System.out.println("Total Gaji : " + total_gaji);
+
+    }
+}
