@@ -1,0 +1,86 @@
+package com.mycompany.hitung;
+import javax.swing.JOptionPane;
+/**
+ *
+ * @author User
+ */
+public class Hitung {
+
+    public static void main(String[] args) {
+        String namaKaryawan = JOptionPane.showInputDialog("Masukkan Nama Karyawan:");
+        double gajiPokok = Double.parseDouble(JOptionPane.showInputDialog("Masukkan Gaji Pokok:"));
+        double lembur = Double.parseDouble(JOptionPane.showInputDialog("Masukkan Lembur (jam):"));
+        double tarifLembur = Double.parseDouble(JOptionPane.showInputDialog("Masukkan Tarif Lembur per Jam:"));
+
+        // Hitung gaji bersih
+        double gajiLembur = lembur * tarifLembur;
+        double gajiBersih = gajiPokok + gajiLembur;
+
+        // Tampilkan hasil
+        String hasil = "Nama Karyawan: " + namaKaryawan + "\n" +
+                       "Gaji Pokok: " + gajiPokok + "\n" +
+                       "Lembur: " + lembur + " jam\n" +
+                       "Tarif Lembur: " + tarifLembur + " per jam\n" +
+                       "Gaji Lembur: " + gajiLembur + "\n" +
+                       "Gaji Bersih: " + gajiBersih;
+
+             JOptionPane.showMessageDialog(null, hasil);
+    }
+}
+
+
+package com.mycompany.hitung5;
+import javax.swing.JOptionPane;
+/**
+ *
+ * @author User
+ */
+public class Hitung5 {
+
+    public static void main(String[] args) {
+        // masukkan biodata anda 
+        String nama=JOptionPane.showInputDialog("Masukkan nama karyawan ");
+        String NIK=JOptionPane.showInputDialog("Masukkan NIK");
+        String NoHp=JOptionPane.showInputDialog("Masukkan NoHp");
+        String JenisKelamin=JOptionPane.showInputDialog("Masukkan Jenis Kelamin");
+        
+        // Data gaji berdasarkan karir (gunakan HashMap atau struktur data lainnya jika perlu)
+        String[] karir = {"Programmer", "Desainer Grafis", "Manajer Proyek", "Pemasar Digital"};
+        double[] gaji = {7000000, 6000000, 8000000, 5500000};
+        String input = JOptionPane.showInputDialog(null, "Status Aktif [true/false]");
+        boolean status = Boolean.parseBoolean(input);
+        // Meminta pengguna memasukkan karir
+        String inputKarir = JOptionPane.showInputDialog("Masukkan karir yang ingin dicari gajinya:");
+
+        // Memproses input
+        if (inputKarir != null) {
+            // Mengabaikan case (uppercase atau lowercase)
+            String karirCari = inputKarir.trim().toLowerCase();
+
+            // Mencari gaji berdasarkan karir
+            double gajiDitemukan = 0.0;
+            boolean ditemukan = false;
+
+            for (int i = 0; i < karir.length; i++) {
+                if (karir[i].toLowerCase().equals(karirCari)) {
+                    gajiDitemukan = gaji[i];
+                    ditemukan = true;
+                    break;
+                }
+            }
+
+            // Menampilkan hasil
+            if (ditemukan) {
+                JOptionPane.showMessageDialog(null, "Gaji untuk karir \"" + inputKarir + "\" adalah: " + gajiDitemukan);
+            } else {
+                JOptionPane.showMessageDialog(null, "Karir \"" + inputKarir + "\" tidak ditemukan dalam daftar.");
+                System.out.print(" Nama Karyawan =  "+nama  );
+                System.out.print(" NIK =  "+NIK  );
+                System.out.print(" NoHp =  "+NoHp  );
+                System.out.print(" Jenis Kelamin =  "+JenisKelamin  );
+                System.out.print(" Status =  "+status  );
+            }
+        }
+    }
+}
+    
