@@ -1,0 +1,86 @@
+*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ */
+
+package com.mycompany.hitung6;
+import java.util.Scanner;
+/**
+ *
+ * @author User
+ */
+public class Hitung6 {
+
+    public static void main(String[] args) {
+        Scanner input=new Scanner(System.in);
+        String Nama, NIK, Bagian;
+        int gajipokok = 0;
+        int golongankaryawan =0;
+        int jumlahharimasuk =0;
+        int uangtransport = 0;
+        int tunjangantransport = 0;
+        int totalgaji = 0;
+        int potonganasuransi = 0;
+        
+        System.out.println("     PERHITUNGAN GAJI KARYAWAN     ");
+        System.out.println("===================================");
+        System.out.print("Masukkan Nama   = ");
+        Nama=input.nextLine();
+        
+        System.out.print("Masukkan NIK    = ");
+        NIK=input.nextLine();
+        
+        System.out.print("Masukkan Bagian = ");
+        Bagian=input.nextLine();
+        
+        System.out.println("Pilihan Golongan");
+        System.out.println("Golongan 1, Golongan 2, Golongan 3");
+        System.out.print("masukan golongan  = ");
+        golongankaryawan=input.nextInt();      
+        System.out.print("Masukkan Jumlah Hari Masuk = ");
+        jumlahharimasuk=input.nextInt();
+        uangtransport=jumlahharimasuk*25000;
+        
+        System.out.println("                                   ");
+        System.out.println("            DATA KARYAWAN          ");
+        System.out.println("          ==================   ");
+        System.out.println("Nama      =  "+Nama);
+        
+        System.out.println("NIK       =  "+NIK);
+        
+        System.out.println("Bagian    =  "+Bagian);
+        
+        System.out.println("Golongan  =  "+golongankaryawan);
+        
+        switch(golongankaryawan){
+            case 1:
+                gajipokok=3000000;
+                potonganasuransi=gajipokok*5/100;
+                totalgaji=gajipokok+uangtransport-potonganasuransi;
+                System.out.println ("Tunjangan Transport = "+uangtransport);
+                System.out.println ("Gaji pokok          = "+gajipokok);
+                System.out.println ("Potongan Asuransi   = "+potonganasuransi);
+                System.out.println ("Gaji                = "+totalgaji);
+                break;
+            
+            case 2:
+                gajipokok=2500000;
+                potonganasuransi=gajipokok*3/100;
+                totalgaji=gajipokok+uangtransport-potonganasuransi;
+                System.out.println ("Tunjangan Transport = "+uangtransport);
+                System.out.println ("Gaji Pokok          = "+gajipokok);
+                System.out.println ("Potongan Asuransi   = "+potonganasuransi);
+                System.out.println ("Gaji                = "+totalgaji);
+                break;
+                
+            case 3:
+                gajipokok=2000000;
+                totalgaji=gajipokok+uangtransport;
+                System.out.println ("Tunjangan Transport = "+uangtransport);
+                System.out.println ("Gaji Pokok          = "+gajipokok);
+                System.out.println ("total Gaji          = "+totalgaji);
+                
+                
+         }
+    
+    }
+}
